@@ -2,7 +2,7 @@
   "name": "Notification Muter",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension will mute notifications ",
+  "description": "This extension will mute notifications",
   "homepage_url": "http://github.com/mikfreedman/notification-muter",
   "icons": {
     "16": "icons/bell.png",
