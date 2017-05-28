@@ -1,28 +1,5 @@
-chrome.storage.onChanged.addListener(function(changes, namespace) {
-  var notificationMuter = changes.notificationMuter;
-  if (notificationMuter === undefined) {
-    return;
-  }
-
-  var prefix = notificationMuter.newValue ? "no-" : "";
-
-  var iconPaths =  {
-    "16": "icons/" + prefix +"bell.png",
-    "48": "icons/" + prefix +"bell.png",
-    "128": "icons/" + prefix +"bell.png"
-  }
-
-  chrome.browserAction.setIcon({ path: iconPaths });
-
-  var setting = notificationMuter.newValue ? "block" : "allow";
-  chrome.contentSettings.notifications.set({
-    primaryPattern: "<all_urls>",
-    setting: setting
-  }, function() {
-    console.log("working", notificationMuter.newValue, setting);
-  });
-});
-
+var notificationMuter = new NotificationMuter.NotificationMuter();
+chrome.storage.onChanged.addListener(notificationMuter.listener);
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   chrome.storage.local.get("notificationMuter", function(items) {
