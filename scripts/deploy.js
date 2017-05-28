@@ -22,7 +22,7 @@ tokenProvider.getToken(function (err, token) {
 function publishFile(token) {
   var curl = new Curl();
 
-  curl.setOpt( Curl.option.URL, 'https://www.googleapis.com/chromewebstore/v1.1/items/' + process.env.APP_ID + '/publish?publishTarget=public' );
+  curl.setOpt( Curl.option.URL, 'https://www.googleapis.com/chromewebstore/v1.1/items/' + process.env.APP_ID + '/publish' );
   curl.setOpt( Curl.option.HTTPHEADER, ['Authorization: Bearer ' + token, 'x-goog-api-version: 2', 'Content-Length: 0'] );
   curl.setOpt( Curl.option.POSTFIELDS, '{}' );
   curl.setOpt( Curl.option.VERBOSE, 1 );
