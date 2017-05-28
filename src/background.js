@@ -1,8 +1,5 @@
-var notificationMuter = new NotificationMuter.NotificationMuter();
-chrome.storage.onChanged.addListener(notificationMuter.listener);
+var notificationMuter = new NotificationMuter.NotificationMuter(chrome);
 
-chrome.browserAction.onClicked.addListener(function(tab) {
-  chrome.storage.local.get("notificationMuter", function(items) {
-    chrome.storage.local.set({"notificationMuter": !items.notificationMuter});
-  });
-});
+chrome.storage.onChanged.addListener(notificationMuter.storageChangedListener);
+
+chrome.browserAction.onClicked.addListener(notificationMuter.browserActionListener);
