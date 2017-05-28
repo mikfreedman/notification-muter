@@ -1,0 +1,8 @@
+test:
+  override:
+    - 'npm test'
+deployment:
+  production:
+    branch: master
+    commands:
+      - 'npm run package_and_deploy'
