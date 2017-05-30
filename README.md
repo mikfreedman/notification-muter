@@ -62,7 +62,7 @@ npm test
 
 ## Deployment
 
-This application is automatically deployed to the Chrome Web Store via CircleCI ([pivotal/allocations-power-up](https://circleci.com/gh/mikfreedman/notification-muter)).
+This application is automatically deployed to the Chrome Web Store via CircleCI ([mikfreedman/notification-muter](https://circleci.com/gh/mikfreedman/notification-muter)).
 
 The Circle CI build must be configured with the following environment variables:
 
