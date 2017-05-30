@@ -6,4 +6,4 @@ chrome.storage.onChanged.addListener(notificationMuter.storageChangedListener);
 chrome.storage.onChanged.addListener(popupMuter.storageChangedListener);
 chrome.storage.onChanged.addListener(iconListener.storageChangedListener);
 
-chrome.browserAction.onClicked.addListener(notificationMuter.browserActionListener);
+chrome.browserAction.onClicked.addListener(new Muters.ClickListener(chrome));

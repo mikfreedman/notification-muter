@@ -15,6 +15,7 @@
     "scripts": [
       "src/notificationMuter.js",
       "src/popupMuter.js",
+      "src/clickListener.js",
       "src/iconListener.js",
       "src/background.js"
     ],

@@ -17,6 +17,7 @@ module.exports = function(config) {
     files: [
       'src/notificationMuter.js',
       'src/popupMuter.js',
+      'src/clickListener.js',
       'src/iconListener.js',
       'test/**/*Spec.js'
     ],
