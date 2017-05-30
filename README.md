@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mikfreedman/notification-muter.svg?style=svg)](https://circleci.com/gh/mikfreedman/notification-muter)
 
-This chrome extension mutes notifications in Google Chrome. 
+This chrome extension mutes notifications and popups in Google Chrome. 
 
 You use it by clicking the bell icon!
 

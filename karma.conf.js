@@ -16,6 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'src/notificationMuter.js',
+      'src/popupMuter.js',
       'src/iconListener.js',
       'test/**/*Spec.js'
     ],
