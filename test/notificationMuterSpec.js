@@ -6,10 +6,6 @@ describe('Muters.NotificationMuter', function () {
   beforeEach(function() {
 
     chrome = {
-      browserAction: {
-        setIcon: function() {
-        }
-      },
       contentSettings: {
         notifications: {
           set: function() {
@@ -32,25 +28,8 @@ describe('Muters.NotificationMuter', function () {
     }
 
     spyOn(chrome.storage.local, "set");
-    spyOn(chrome.browserAction, "setIcon");
     spyOn(chrome.contentSettings.notifications, "set");
     spyOn(chrome.contentSettings.notifications, "clear");
-  });
-
-  describe("when notifications are muted", function() {
-    it('sets the icon on startup', function() {
-      items.notificationMuter = true
-      notificationMuter = new Muters.NotificationMuter(chrome);
-      expect(chrome.browserAction.setIcon).toHaveBeenCalled();
-    });
-  });
-
-  describe("when notifications aren't muted", function() {
-    it('doesn\'t set the icon on startup', function() {
-      items.notificationMuter = false
-      notificationMuter = new Muters.NotificationMuter(chrome);
-      expect(chrome.browserAction.setIcon).not.toHaveBeenCalled();
-    });
   });
 
   describe('browser action click', function() {

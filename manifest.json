@@ -14,6 +14,7 @@
   "background": {
     "scripts": [
       "src/notificationMuter.js",
+      "src/iconListener.js",
       "src/background.js"
     ],
     "persistent": false
