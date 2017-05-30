@@ -25,7 +25,7 @@ function publishFile(token) {
   curl.setOpt( Curl.option.URL, 'https://www.googleapis.com/chromewebstore/v1.1/items/' + process.env.APP_ID + '/publish' );
   curl.setOpt( Curl.option.HTTPHEADER, ['Authorization: Bearer ' + token, 'x-goog-api-version: 2', 'Content-Length: 0'] );
   curl.setOpt( Curl.option.POSTFIELDS, '{}' );
-  curl.setOpt( Curl.option.VERBOSE, 1 );
+  curl.setOpt( Curl.option.VERBOSE, 0 );
 
   curl.on( 'end', function( statusCode, body ) {
     console.log( body );
@@ -57,7 +57,7 @@ function uploadFile(token, fileName, success) {
     var curl = new Curl();
     curl.setOpt( Curl.option.URL, 'https://www.googleapis.com/upload/chromewebstore/v1.1/items/' + process.env.APP_ID );
     curl.setOpt( Curl.option.HTTPHEADER, ['Authorization: Bearer ' + token, 'x-goog-api-version: 2'] );
-    curl.setOpt( Curl.option.VERBOSE, 1 );
+    curl.setOpt( Curl.option.VERBOSE, 0 );
     curl.setOpt( Curl.option.UPLOAD, 1 );
     curl.setOpt( Curl.option.READDATA, fd );
 
