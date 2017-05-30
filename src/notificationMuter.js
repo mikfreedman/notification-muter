@@ -36,13 +36,19 @@ window.NotificationMuter = window.NotificationMuter || {};
 
       browserAction.setIcon({ path: iconPaths(prefix) });
 
-      var setting = notificationMuter.newValue ? "block" : "allow";
-      contentSettings.notifications.set({
-        primaryPattern: "<all_urls>",
-        setting: setting
-      }, function() {
-        console.log("working", notificationMuter.newValue, setting);
-      });
+      if(notificationMuter.newValue) {
+        contentSettings.notifications.set({
+          primaryPattern: "<all_urls>",
+          setting: "block"
+        }, function() {
+          console.log("notifications managed by extension and blocked for all urls");
+        });
+
+      } else {
+        contentSettings.notifications.clear({}, function() {
+          console.log("notifications no longer managed by extension");
+        });
+      }
     }
   }
 
