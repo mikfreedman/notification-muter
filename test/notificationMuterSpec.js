@@ -1,4 +1,4 @@
-describe('NotificationMuter.NotificationMuter', function () {
+describe('Muters.NotificationMuter', function () {
   var notificationMuter;
   var chrome;
   var items = {};
@@ -40,7 +40,7 @@ describe('NotificationMuter.NotificationMuter', function () {
   describe("when notifications are muted", function() {
     it('sets the icon on startup', function() {
       items.notificationMuter = true
-      notificationMuter = new NotificationMuter.NotificationMuter(chrome);
+      notificationMuter = new Muters.NotificationMuter(chrome);
       expect(chrome.browserAction.setIcon).toHaveBeenCalled();
     });
   });
@@ -48,14 +48,14 @@ describe('NotificationMuter.NotificationMuter', function () {
   describe("when notifications aren't muted", function() {
     it('doesn\'t set the icon on startup', function() {
       items.notificationMuter = false
-      notificationMuter = new NotificationMuter.NotificationMuter(chrome);
+      notificationMuter = new Muters.NotificationMuter(chrome);
       expect(chrome.browserAction.setIcon).not.toHaveBeenCalled();
     });
   });
 
   describe('browser action click', function() {
     it('sets the variable', function() {
-      notificationMuter = new NotificationMuter.NotificationMuter(chrome);
+      notificationMuter = new Muters.NotificationMuter(chrome);
       notificationMuter.browserActionListener({});
       expect(chrome.storage.local.set).toHaveBeenCalled();
     });
@@ -63,7 +63,7 @@ describe('NotificationMuter.NotificationMuter', function () {
 
   describe("when notifications are managed", function() {
     it('blocks all urls', function() {
-      notificationMuter = new NotificationMuter.NotificationMuter(chrome);
+      notificationMuter = new Muters.NotificationMuter(chrome);
       notificationMuter.storageChangedListener({notificationMuter: { newValue: true }});
       expect(chrome.contentSettings.notifications.set).toHaveBeenCalledWith({primaryPattern: "<all_urls>", setting: "block"}, jasmine.any(Function));
     });
@@ -71,7 +71,7 @@ describe('NotificationMuter.NotificationMuter', function () {
 
   describe("when notifications are no longer managed", function() {
     it('blocks all urls', function() {
-      notificationMuter = new NotificationMuter.NotificationMuter(chrome);
+      notificationMuter = new Muters.NotificationMuter(chrome);
       notificationMuter.storageChangedListener({notificationMuter: { newValue: false }});
       expect(chrome.contentSettings.notifications.clear).toHaveBeenCalled();
     });

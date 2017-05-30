@@ -1,4 +1,4 @@
-var notificationMuter = new NotificationMuter.NotificationMuter(chrome);
+var notificationMuter = new Muters.NotificationMuter(chrome);
 
 chrome.storage.onChanged.addListener(notificationMuter.storageChangedListener);
 

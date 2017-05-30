@@ -1,4 +1,4 @@
-window.NotificationMuter = window.NotificationMuter || {};
+window.Muters = window.Muters || {};
 
 (function(NotificationMuter) {
   function notificationMuter(chrome) {
@@ -52,5 +52,5 @@ window.NotificationMuter = window.NotificationMuter || {};
     }
   }
 
-  NotificationMuter.NotificationMuter = notificationMuter;
-})(window.NotificationMuter);
+  Muters.NotificationMuter = notificationMuter;
+})(window.Muters);
