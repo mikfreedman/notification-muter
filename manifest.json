@@ -15,6 +15,7 @@
     "scripts": [
       "src/notificationMuter.js",
       "src/popupMuter.js",
+      "src/alertMuter.js",
       "src/clickListener.js",
       "src/iconListener.js",
       "src/background.js"
@@ -26,10 +27,23 @@
     "default_title": "mute/unmute notifications"
   },
   "permissions": [
+    "https://calendar.google.com/*",
+    "http://calendar.google.com/*",
     "contentSettings",
     "storage"
   ],
   "web_accessible_resources": [
     "icons/no-bell.png"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://calendar.google.com/*",
+        "http://calendar.google.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
   ]
 }
