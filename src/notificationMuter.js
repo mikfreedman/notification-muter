@@ -5,12 +5,6 @@ window.Muters = window.Muters || {};
     var contentSettings = chrome.contentSettings;
     var storage = chrome.storage;
 
-    this.browserActionListener = function(tab) {
-      storage.local.get("notificationMuter", function(items) {
-        storage.local.set({"notificationMuter": !items.notificationMuter});
-      });
-    }
-
     this.storageChangedListener = function(changes, namespace) {
       var notificationMuter = changes.notificationMuter;
       if (notificationMuter === undefined) {

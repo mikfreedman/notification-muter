@@ -32,14 +32,6 @@ describe('Muters.NotificationMuter', function () {
     spyOn(chrome.contentSettings.notifications, "clear");
   });
 
-  describe('browser action click', function() {
-    it('sets the variable', function() {
-      notificationMuter = new Muters.NotificationMuter(chrome);
-      notificationMuter.browserActionListener({});
-      expect(chrome.storage.local.set).toHaveBeenCalled();
-    });
-  })
-
   describe("when notifications are managed", function() {
     it('blocks all urls', function() {
       notificationMuter = new Muters.NotificationMuter(chrome);
