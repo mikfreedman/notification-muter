@@ -20,6 +20,7 @@ module.exports = function(config) {
       'src/popupMuter.js',
       'src/clickListener.js',
       'src/iconListener.js',
+      'src/reinjectListener.js',
       'test/**/*Spec.js'
     ],
 

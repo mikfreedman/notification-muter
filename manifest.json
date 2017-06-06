@@ -18,6 +18,7 @@
       "src/alertMuter.js",
       "src/clickListener.js",
       "src/iconListener.js",
+      "src/reinjectListener.js",
       "src/background.js"
     ],
     "persistent": false
